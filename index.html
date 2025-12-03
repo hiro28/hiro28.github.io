@@ -1,1 +1,219 @@
-### Hello world!
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3KG Challenge - Kèo Máu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .glass-effect {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+        .stress-hover:hover {
+            animation: shake 0.5s;
+            animation-iteration-count: infinite;
+        }
+        .text-shadow-red {
+            text-shadow: 2px 2px 0px #991b1b;
+        }
+    </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 py-6">
+        <div class="container mx-auto px-6 text-center">
+            <div class="inline-block glass-effect px-8 py-2 rounded-full">
+                <span class="text-xl md:text-2xl font-black text-red-500 tracking-widest uppercase">
+                    <i class="fas fa-skull-crossbones mr-2"></i> Kèo Máu 3KG
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative min-h-screen flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="Unknown-6.jpg" 
+                 alt="Gym Funny" 
+                 onerror="this.src='https://images.unsplash.com/photo-1519052537078-e6302a4968ef?q=80&w=1740&auto=format&fit=crop'"
+                 class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 w-full max-w-4xl mx-auto pt-20">
+            
+            <div class="mb-6 inline-block bg-yellow-400 text-black font-bold px-4 py-1 transform -rotate-2">
+                ⚠️ CẢNH BÁO: KHÔNG GIẢM LÀ CHẾT ⚠️
+            </div>
+
+            <h1 class="text-5xl md:text-8xl font-black mb-4 leading-none text-shadow-red uppercase">
+                TAO vs MÀY
+            </h1>
+            
+            <p class="text-gray-300 text-xl md:text-2xl mb-12 font-bold italic">
+                "Đừng để cái bụng mỡ làm mờ nhân cách."
+            </p>
+
+            <div class="bg-gray-900/80 backdrop-blur-md rounded-3xl p-8 md:p-12 border-2 border-red-600 shadow-[0_0_30px_rgba(220,38,38,0.5)]">
+                <p class="text-red-500 font-bold uppercase tracking-[0.3em] mb-6">Thời gian còn lại để bớt nhục</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                    <div class="text-center">
+                        <div id="days" class="text-5xl md:text-7xl font-black text-white mb-2">00</div>
+                        <div class="text-xs text-gray-400 uppercase">Ngày đày đọa</div>
+                    </div>
+                    <div class="text-center">
+                        <div id="hours" class="text-5xl md:text-7xl font-black text-white mb-2">00</div>
+                        <div class="text-xs text-gray-400 uppercase">Giờ đói bụng</div>
+                    </div>
+                    <div class="text-center">
+                        <div id="minutes" class="text-5xl md:text-7xl font-black text-white mb-2">00</div>
+                        <div class="text-xs text-gray-400 uppercase">Phút hối hận</div>
+                    </div>
+                    <div class="text-center">
+                        <div id="seconds" class="text-5xl md:text-7xl font-black text-red-500 stress-hover cursor-pointer">00</div>
+                        <div class="text-xs text-gray-400 uppercase">Giây hấp hối</div>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-8 border-t border-gray-700">
+                    <div class="text-2xl md:text-3xl font-black text-white">
+                        DEADLINE: <span class="text-red-500">20.12.2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="flex flex-col md:flex-row items-center gap-10 mb-20">
+                <div class="md:w-1/2 relative group">
+                    <img src="Unknown-7.jpg" 
+                         alt="Gym Struggle" 
+                         onerror="this.src='https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2069&auto=format&fit=crop'"
+                         class="rounded-xl shadow-lg rotate-2 hover:rotate-0 transition duration-500 border-4 border-white w-full h-auto object-cover">
+                    <div class="absolute -bottom-4 -right-4 bg-yellow-400 text-black font-bold px-4 py-2 rotate-6 rounded-lg shadow-xl">
+                        "Nhìn cái bụng kìa!"
+                    </div>
+                    <div class="text-center mt-6 text-gray-500 italic text-sm">Ảnh minh họa: "Hiện thực phũ phàng"</div>
+                </div>
+                <div class="md:w-1/2 text-left">
+                    <h2 class="text-4xl font-black text-white mb-6 uppercase">Tại sao phải làm trò này?</h2>
+                    <ul class="space-y-4 text-lg text-gray-300">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-4 text-2xl"></i>
+                            Để mặc vừa cái quần từ năm 2020.
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-4 text-2xl"></i>
+                            Để crush không nhìn mình như nhìn bao gạo.
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-4 text-2xl"></i>
+                            Để chứng minh mình không phải "thùng rỗng kêu to".
+                        </li>
+                        <li class="flex items-center font-bold text-red-500 text-xl mt-4">
+                            <i class="fas fa-times text-red-500 mr-4 text-2xl"></i>
+                            Và quan trọng nhất: ĐỂ KHÔNG THUA MÀY.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 rounded-3xl p-8 md:p-12 text-center border border-gray-800 relative overflow-hidden group">
+                <div class="absolute inset-0 bg-red-900/20 group-hover:bg-red-900/40 transition"></div>
+                <div class="relative z-10 flex flex-col items-center">
+                    <img src="Unknown-8.jpg" 
+                         alt="Hậu quả" 
+                         onerror="this.src='https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1887&auto=format&fit=crop'"
+                         class="w-64 h-64 object-cover rounded-full border-4 border-red-500 mb-6 stress-hover shadow-[0_0_20px_rgba(255,0,0,0.5)]">
+                    <h3 class="text-3xl font-black text-white mb-4 uppercase">Mục tiêu phấn đấu</h3>
+                    <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+                        Đứa nào không giảm được 3KG trước ngày 20/12/2025 sẽ phải chịu một trong các hình phạt sau (hoặc tất cả):
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left w-full">
+                        <div class="bg-black/50 p-6 rounded-xl border border-gray-700 hover:border-yellow-400 transition">
+                            <h4 class="font-bold text-yellow-400 mb-2">Level 1: Nhẹ nhàng</h4>
+                            <p class="text-sm">Bao một chầu lẩu Haidilao full topping (không được kêu ca).</p>
+                        </div>
+                        <div class="bg-black/50 p-6 rounded-xl border border-gray-700 hover:border-orange-500 transition">
+                            <h4 class="font-bold text-orange-500 mb-2">Level 2: Cay đắng</h4>
+                            <p class="text-sm">Post ảnh dìm hàng lên Facebook với caption "Tôi là con heo lười biếng".</p>
+                        </div>
+                        <div class="bg-black/50 p-6 rounded-xl border border-gray-700 hover:border-red-600 transition">
+                            <h4 class="font-bold text-red-600 mb-2">Level 3: Nhục nhã</h4>
+                            <p class="text-sm">Mặc áo "I LOVE GYM" đi bộ ngoài công viên 1 vòng.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-10 text-center border-t border-gray-900">
+        <p class="text-gray-600 text-sm italic">Web này tạo ra để nhắc nhở sự lười biếng của chúng ta.</p>
+        <p class="text-gray-700 text-xs mt-2">Đừng để code này chạy vô nghĩa.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const countDownDate = new Date("2025-12-20T00:00:00").getTime();
+            
+            const daysEl = document.getElementById("days");
+            const hoursEl = document.getElementById("hours");
+            const minutesEl = document.getElementById("minutes");
+            const secondsEl = document.getElementById("seconds");
+
+            function updateTimer() {
+                if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                daysEl.innerHTML = days < 10 ? "0" + days : days;
+                hoursEl.innerHTML = hours < 10 ? "0" + hours : hours;
+                minutesEl.innerHTML = minutes < 10 ? "0" + minutes : minutes;
+                secondsEl.innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+                if (distance < 0) {
+                    clearInterval(timerInterval);
+                    const header = document.querySelector("header");
+                    if (header) {
+                        header.innerHTML = "<div class='h-screen flex items-center justify-center text-5xl font-black text-red-600 uppercase text-center p-10'>Hết giờ!<br>Chuẩn bị tiền bao đi ăn đi!</div>";
+                    }
+                }
+            }
+
+            updateTimer();
+
+            const timerInterval = setInterval(updateTimer, 1000);
+        });
+    </script>
+</body>
+</html>
