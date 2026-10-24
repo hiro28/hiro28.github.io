@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Giao kèo 6 múi</title>
+<meta name="description" content="Hết ngày 31/12/2026, ai không có 6 múi phải gọi người có là anh đến hết đời.">
+<meta property="og:title" content="Giao kèo 6 múi">
+<meta property="og:description" content="Hết ngày 31/12/2026, ai không có 6 múi phải gọi người có là anh đến hết đời.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://hiro28.github.io/tri/hien-trang.jpg">
+<meta name="theme-color" content="#2b2d31">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23d6332a'/%3E%3Ctext x='32' y='47' font-family='Arial Black,Arial' font-weight='900' font-size='40' text-anchor='middle' fill='%231c1d20'%3E6%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Big+Shoulders+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --locker: #2b2d31;
+    --seam: #26282c;
+    --plaque: #d6332a;
+    --ink: #1c1d20;
+    --sign: #f2f2ee;
+    --steel: #a3a8ae;
+    --bench: #b8262b;
+    --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+    --body: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--locker);
+    /* locker door seams */
+    background-image: repeating-linear-gradient(90deg, transparent 0 238px, var(--seam) 238px 241px);
+    color: var(--sign);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 16px 64px;
+  }
+
+  .top {
+    display: grid;
+    gap: 48px;
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(44px, 11.5vw, 92px);
+    line-height: 0.94;
+    letter-spacing: -0.005em;
+    margin: 0;
+    max-width: 11ch;
+    text-wrap: balance;
+  }
+
+  .deadline {
+    margin: 18px 0 0;
+    color: var(--steel);
+    font-size: 16px;
+  }
+
+  .deadline strong { color: var(--sign); font-weight: 700; }
+
+  /* ---------- the six-pack ---------- */
+  .abs {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 14px;   /* linea alba */
+    row-gap: 10px;
+    max-width: 520px;
+  }
+
+  .mui {
+    position: relative;
+    background: var(--plaque);
+    color: var(--ink);
+    padding: 22px 22px 18px;
+    min-height: 132px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  /* inset frame, like the number plates on the lockers */
+  .mui::after {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border: 2px solid rgba(28, 29, 32, 0.8);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .mui:nth-child(odd)  { border-radius: 30px 10px 10px 26px; }
+  .mui:nth-child(even) { border-radius: 10px 30px 26px 10px; }
+
+  /* lower row tapers toward the waist */
+  .mui:nth-child(5) { margin-left: 7%; }
+  .mui:nth-child(6) { margin-right: 7%; }
+
+  .so {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(58px, 17vw, 96px);
+    line-height: 0.86;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+
+  .nhan {
+    margin-top: 6px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .chu-thich {
+    margin: 14px 0 0;
+    max-width: 520px;
+    color: var(--steel);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .het-gio {
+    display: none;
+    margin: 32px 0 0;
+    max-width: 520px;
+    padding: 16px 20px;
+    border-left: 6px solid var(--plaque);
+    background: rgba(214, 51, 42, 0.14);
+    font-size: 19px;
+    font-weight: 700;
+  }
+
+  body.expired .het-gio { display: block; }
+  body.expired .abs { margin-top: 20px; }
+
+  /* ---------- photo ---------- */
+  .hien-trang h2,
+  .giao-keo h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.1;
+    margin: 0 0 16px;
+  }
+
+  .hien-trang figure { margin: 0; }
+
+  .hien-trang img {
+    display: block;
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    border: 3px solid #3d4045;
+    border-radius: 6px;
+  }
+
+  .hien-trang figcaption {
+    margin-top: 12px;
+    max-width: 460px;
+    color: var(--steel);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  /* ---------- the pact ---------- */
+  .giao-keo {
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 3px solid var(--bench);
+    max-width: 640px;
+  }
+
+  .giao-keo ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: dieu;
+  }
+
+  .giao-keo li {
+    counter-increment: dieu;
+    margin: 0 0 18px;
+    padding-left: 76px;
+    position: relative;
+  }
+
+  .giao-keo li::before {
+    content: "Điều " counter(dieu);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 700;
+    color: var(--plaque);
+  }
+
+  footer {
+    margin-top: 48px;
+    color: var(--steel);
+    font-size: 14px;
+  }
+
+  /* one load moment: the abs tense up */
+  @media (prefers-reduced-motion: no-preference) {
+    .mui {
+      animation: siet 520ms cubic-bezier(.2, .9, .3, 1.25) both;
+    }
+    .mui:nth-child(1), .mui:nth-child(2) { animation-delay: 80ms; }
+    .mui:nth-child(3), .mui:nth-child(4) { animation-delay: 180ms; }
+    .mui:nth-child(5), .mui:nth-child(6) { animation-delay: 280ms; }
+    @keyframes siet {
+      from { opacity: 0; transform: scale(0.9); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+  }
+
+  @media (min-width: 900px) {
+    .page { padding: 80px 32px 80px; }
+    .top {
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 64px;
+      align-items: start;
+    }
+    .hien-trang { padding-top: 8px; }
+    .mui { min-height: 140px; }
+  }
+
+  @media (max-width: 380px) {
+    .mui { padding: 18px 18px 14px; min-height: 116px; }
+    .nhan { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="top">
+    <section aria-labelledby="keo">
+      <h1 id="keo">Ai không có 6 múi phải gọi người có là “anh” đến hết đời.</h1>
+      <p class="deadline">Hạn chót: <strong>23:59:59 ngày 31/12/2026</strong>, giờ Việt Nam.</p>
+
+      <p class="het-gio" id="het-gio">Hết giờ. Vén áo lên đối chiếu.</p>
+
+      <div class="abs" role="timer" aria-label="Thời gian còn lại">
+        <div class="mui"><span class="so" id="ngay">--</span><span class="nhan">ngày</span></div>
+        <div class="mui"><span class="so" id="gio">--</span><span class="nhan">giờ</span></div>
+        <div class="mui"><span class="so" id="phut">--</span><span class="nhan">phút</span></div>
+        <div class="mui"><span class="so" id="giay">--</span><span class="nhan">giây</span></div>
+        <div class="mui"><span class="so" id="cuoi-tuan">--</span><span class="nhan">cuối tuần</span></div>
+        <div class="mui"><span class="so" id="bua">--</span><span class="nhan">bữa ăn</span></div>
+      </div>
+      <p class="chu-thich">Cuối tuần và bữa ăn còn lại tính đến hạn chót, 3 bữa mỗi ngày. Mỗi cuối tuần là một lần dễ gục.</p>
+    </section>
+
+    <section class="hien-trang" aria-labelledby="ht">
+      <h2 id="ht">Hiện trạng</h2>
+      <figure>
+        <img src="hien-trang.jpg" width="960" height="1279" alt="Ảnh chụp gương trong phòng thay đồ phòng gym, cởi trần, mặc quần đùi đen." loading="eager">
+        <figcaption>Ảnh lúc ký giao kèo. Ngày 31/12 chụp lại cùng gương, cùng đèn để đối chiếu.</figcaption>
+      </figure>
+    </section>
+  </div>
+
+  <section class="giao-keo" aria-labelledby="gk">
+    <h2 id="gk">Giao kèo</h2>
+    <ol>
+      <li>Hạn chót là 23:59:59 ngày 31/12/2026, giờ Việt Nam. Không gia hạn.</li>
+      <li>Đối chiếu bằng ảnh chụp trong ngày 31/12: thấy rõ đủ 6 múi, không chỉnh ảnh, không filter.</li>
+      <li>Ai không có 6 múi phải gọi người có là “anh”, mọi lúc mọi nơi, đến hết đời. Không thương lượng, không ân xá.</li>
+    </ol>
+  </section>
+
+  <footer>Trang này tự đếm. Không ai chỉnh được ngày.</footer>
+</main>
+
+<script>
+  (function () {
+    // Hết ngày 31/12/2026 theo giờ Việt Nam (UTC+7)
+    var DEADLINE = Date.parse("2027-01-01T00:00:00+07:00");
+    var VN_OFFSET = 7 * 3600 * 1000;
+    var DAY = 86400000;
+
+    var el = {
+      ngay: document.getElementById("ngay"),
+      gio: document.getElementById("gio"),
+      phut: document.getElementById("phut"),
+      giay: document.getElementById("giay"),
+      cuoiTuan: document.getElementById("cuoi-tuan"),
+      bua: document.getElementById("bua")
+    };
+
+    function pad(n) { return n < 10 ? "0" + n : String(n); }
+
+    function weekendsLeft(now) {
+      // đếm theo lịch Việt Nam: các thứ Bảy từ hôm nay đến 31/12,
+      // cộng cuối tuần đang diễn ra nếu hôm nay là Chủ nhật
+      var vn = new Date(now + VN_OFFSET);
+      var d = Date.UTC(vn.getUTCFullYear(), vn.getUTCMonth(), vn.getUTCDate());
+      var last = Date.UTC(2026, 11, 31);
+      var count = 0;
+      if (new Date(d).getUTCDay() === 0 && d <= last) count++;
+      for (; d <= last; d += DAY) {
+        if (new Date(d).getUTCDay() === 6) count++;
+      }
+      return count;
+    }
+
+    function tick() {
+      var now = Date.now();
+      var diff = Math.max(0, DEADLINE - now);
+      var s = Math.floor(diff / 1000);
+
+      el.ngay.textContent = Math.floor(s / 86400);
+      el.gio.textContent = pad(Math.floor((s % 86400) / 3600));
+      el.phut.textContent = pad(Math.floor((s % 3600) / 60));
+      el.giay.textContent = pad(s % 60);
+      el.cuoiTuan.textContent = diff > 0 ? weekendsLeft(now) : 0;
+      el.bua.textContent = Math.floor(s / (8 * 3600));
+
+      if (diff === 0) {
+        document.body.classList.add("expired");
+        return false;
+      }
+      return true;
+    }
+
+    if (tick()) {
+      var timer = setInterval(function () {
+        if (!tick()) clearInterval(timer);
+      }, 250);
+    }
+  })();
+</script>
+</body>
+</html>
