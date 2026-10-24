@@ -212,6 +212,37 @@
     max-width: 560px;
   }
 
+  /* ---------- referee ---------- */
+  .trong-tai {
+    margin-top: 64px;
+  }
+
+  .trong-tai h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.1;
+    margin: 0 0 16px;
+  }
+
+  .trong-tai .doi-chieu { align-items: start; }
+
+  /* the referee wears white, not red */
+  .ten.trung-lap {
+    background: var(--sign);
+  }
+
+  .vai-tro {
+    margin: 0;
+    color: var(--steel);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .vai-tro + .vai-tro { margin-top: 8px; }
+
+  .trong-tai .ten { margin-bottom: 12px; }
+
   /* ---------- the pact ---------- */
   .giao-keo {
     margin-top: 64px;
@@ -280,6 +311,8 @@
     .hien-trang { margin-top: 88px; }
     /* photos line up under the two columns above */
     .doi-chieu { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; }
+    .trong-tai { margin-top: 88px; }
+    .trong-tai .doi-chieu { grid-template-columns: minmax(0, 260px) minmax(0, 360px); gap: 32px; }
   }
 
   @media (max-width: 380px) {
@@ -297,7 +330,7 @@
     </section>
 
     <section aria-label="Đếm ngược">
-      <p class="het-gio" id="het-gio">Hết giờ. Trí và Cường vén áo lên đối chiếu.</p>
+      <p class="het-gio" id="het-gio">Hết giờ. Trí và Cường vén áo lên cho Hoài My chấm.</p>
 
       <div class="abs" role="timer" aria-label="Thời gian còn lại">
         <div class="mui"><span class="so" id="ngay">--</span><span class="nhan">ngày</span></div>
@@ -327,6 +360,20 @@
     <p class="chu-thich">Ảnh lúc ký giao kèo. Ngày 31/12 hai người chụp lại cùng chỗ, cùng đèn để đối chiếu. Bấm vào ảnh để xem cỡ lớn.</p>
   </section>
 
+  <section class="trong-tai" aria-labelledby="tt">
+    <h2 id="tt">Trọng tài</h2>
+    <div class="doi-chieu">
+      <figure>
+        <a href="hoai-my.jpg"><img src="hoai-my.jpg" width="720" height="960" alt="Hoài My chụp gương trong phòng tắm, áo trắng, quần short nâu." loading="lazy"></a>
+      </figure>
+      <div>
+        <span class="ten trung-lap">Hoài My</span>
+        <p class="vai-tro">Chấm ảnh đối chiếu của Trí và Cường ngày 31/12.</p>
+        <p class="vai-tro">Trọng tài quyết định cuối cùng, không ai được cãi.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="giao-keo" aria-labelledby="gk">
     <h2 id="gk">Giao kèo</h2>
     <ol>
@@ -334,6 +381,7 @@
       <li>Đối chiếu bằng ảnh chụp trong ngày 31/12: hai người chụp cùng chỗ, cùng đèn, cùng tư thế. Phải thấy rõ đủ 6 múi, không chỉnh ảnh, không filter.</li>
       <li>Ai không có 6 múi phải gọi người có là “anh”, mọi lúc mọi nơi, đến hết đời. Không thương lượng, không ân xá.</li>
       <li>Cả hai cùng có hoặc cùng không thì hoà, không ai phải gọi ai.</li>
+      <li>Hoài My là trọng tài. Có múi hay chưa do trọng tài phán, và phán là xong.</li>
     </ol>
   </section>
 
